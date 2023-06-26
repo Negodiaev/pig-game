@@ -137,3 +137,6 @@ dist
 *.launch
 .settings/
 *.sublime-workspace
+
+# Misc
+*.drawio
