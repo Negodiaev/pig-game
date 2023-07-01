@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -19,6 +24,10 @@ html {
 ul, p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+p {
+  line-height: 1;
 }
 
 button:not([disabled]) {
@@ -35,9 +44,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100dvh;
+  height: 100dvh;
   margin: 0;
-  padding: 1.6rem;
+  padding: 4rem;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 1.6rem;
   line-height: 1.4;
@@ -49,10 +58,10 @@ body {
   -webkit-user-select: none;
   user-select: none;
   box-shadow: var(--shadow-default);
-  width: 102.4rem;
-  max-width: 80%;
-  height: 86rem;
-  max-height: 80dvh;
+  width: 100%;
+  max-width: 102.4rem;
+  height: 95dvh;
+  max-height: 86rem;
   display: flex;
   position: relative;
 }
@@ -86,7 +95,7 @@ body {
 
 .title {
   text-transform: uppercase;
-  font-size: 4.2rem;
+  font-size: 4rem;
   transition: color .2s ease-in-out;
 }
 
@@ -100,7 +109,7 @@ body {
 
 .total {
   color: var(--primary);
-  font-size: 10rem;
+  font-size: 12rem;
   font-weight: 700;
 }
 
@@ -113,13 +122,18 @@ body {
   background-color: var(--primary);
   border-radius: .6rem;
   width: 50%;
-  padding: 1.2rem;
+  max-width: 16rem;
+  padding: 1.6rem;
 }
 
 .subtitle {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 400;
+}
+
+.player__subtitle {
+  margin-bottom: 1.2rem;
 }
 
 .current {
@@ -155,30 +169,20 @@ body {
 }
 
 .board__btn--new {
-  top: 10%;
+  top: 5rem;
 }
 
 .board__btn--roll {
-  top: 80%;
+  bottom: 7rem;
 }
 
 .board__btn--hold {
-  top: 90%;
+  bottom: 0;
 }
 
 @media (width <= 767px) {
   html {
     font-size: 37.5%;
-  }
-
-  body {
-    padding: 2rem;
-  }
-
-  .board {
-    width: 48rem;
-    max-width: 100%;
-    height: auto;
   }
 
   .player {
@@ -191,19 +195,25 @@ body {
   }
 
   .score {
-    width: 75%;
+    width: 100%;
+  }
+}
+
+@media (width <= 1023px) and (height <= 768px) {
+  .player {
+    padding-top: 14rem;
+  }
+}
+
+@media (height <= 600px) and (width >= 768px) {
+  body {
+    height: auto;
+    min-height: 100dvh;
   }
 
-  .board__btn--new {
-    top: 4.8rem;
-  }
-
-  .board__btn--roll {
-    top: 83%;
-  }
-
-  .board__btn--hold {
-    top: 93%;
+  .board {
+    flex-shrink: 0;
+    height: 54rem;
   }
 }
 
