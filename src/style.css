@@ -105,12 +105,12 @@ body {
   transition: 0.2s color ease-in-out;
 }
 
-.title--winner {
-  color: var(--white);
-}
-
 .player__title {
   margin-bottom: 2rem;
+}
+
+.player__title--winner {
+  color: var(--white);
 }
 
 .total {
